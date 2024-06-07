@@ -131,7 +131,7 @@ impl Ring for Digest {
         })
     }
 
-    fn verify(&self, _data: &[u8]) -> Result<bool> {
+    fn verify(&self, data: &[u8]) -> Result<bool> {
         let digest = self.digest(data)?;
         Ok(digest == *self)
     }
